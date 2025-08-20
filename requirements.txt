@@ -4,3 +4,4 @@ accelerate
 datasets 
 peft 
 bitsandbytes
+huggingface_hub
