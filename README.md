@@ -59,6 +59,8 @@ Watch the demo video here: [Demo Video](./demo_video.mp4)
 - Recorded the full workflow in a demo video.
 - EC2 and Streamlit instances were terminated post-demo to reduce costs.
 
+“Along the way, performed extensive data preprocessing, feature engineering, exploratory analysis, model optimization, evaluation, quantization, synthetic data preparation, LLM fine-tuning, backend API setup, and frontend integration to make the pipeline end-to-end.”
+
 ---
 
 ## Future Scope
