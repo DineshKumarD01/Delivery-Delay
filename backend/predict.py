@@ -1,9 +1,8 @@
 import os
 import io
-import random
+import re
 import joblib
 import shap
-import re
 import numpy as np
 import pandas as pd
 from datetime import datetime
@@ -11,22 +10,27 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from contextlib import redirect_stdout, redirect_stderr
 from llama_cpp import Llama
+from huggingface_hub import hf_hub_download
 
 # ------------------------------
-# Load artifacts at startup
+# Download and load artifacts from Hugging Face Hub
 # ------------------------------
-scaler = joblib.load("numerical_scaler.pkl")  # your MinMaxScaler/StandardScaler
-rf_model = joblib.load("rf_model_pruned_compressed.joblib")
+HF_REPO = "Dinesh2001/Llama3.2-1B-QLoRA-Explainer"
+
+# Scaler
+scaler_path = hf_hub_download(repo_id=HF_REPO, filename="numerical_scaler.pkl")
+scaler = joblib.load(scaler_path)
+
+# Random Forest model
+rf_model_path = hf_hub_download(repo_id=HF_REPO, filename="rf_model_pruned_compressed.joblib")
+rf_model = joblib.load(rf_model_path)
+
 distance_df = pd.read_csv("order_city_country_distance.csv")
 performance_scores = pd.read_excel("performance_scores.xlsx", sheet_name=None)
 
-# Load quantized LLaMA model (once)
-llm = Llama(
-    model_path="llama32-1b-merged-Q4_K_M.gguf",
-    n_threads=8,
-    n_ctx=2048,
-    verbose=False
-)
+# LLaMA GGUF model
+llm_path = hf_hub_download(repo_id=HF_REPO, filename="llama32-1b-merged-Q4_K_M.gguf")
+llm = Llama(model_path=llm_path, n_threads=8, n_ctx=2048, verbose=False)
 
 # ------------------------------
 # Configs
