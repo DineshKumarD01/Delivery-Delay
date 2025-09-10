@@ -1,0 +1,114 @@
+/*
+ * Filename: /Users/limingxu/code_space/data_challenge_delay_network/delivery_delay_prediction/incom2024_delay_variable_description.csv
+ * Path: /Users/limingxu/code_space/data_challenge_delay_network/delivery_delay_prediction
+ * Created Date: Sunday, June 15th 2025, 9:03:11 pm
+ * Author: Liming Xu
+ * 
+ * Copyright (c) 2025 SCAIL, IfM, University of Cambridge
+ */
+variable_name,type,description
+payment_type,categorical,Type of transaction made
+profit_per_order,numerical,Earnings per order placed
+sales_per_customer,numerical,Total sales per customer made per customer
+category_id,numerical,Product category code
+category_name,text,Description of the product category
+customer_city,categorical,City where the customer made the purchase
+customer_country,categorical,Country where the customer made the purchase
+customer_id,numerical,Customer ID
+customer_segment,categorical,"Types of Customers Consumer, Corporate, Home Office"
+customer_state,categorical,State to which the store where the purchase is registered belongs
+customer_zipcode,text,Customer Zipcode
+department_id,numerical,Department code of store
+department_name,text,Department name of store
+latitude,numerical,Latitude corresponding to location of store
+longitude,numerical,Longitude corresponding to location of store
+market,categorical,"Market to where the order is delivered: Africa, Europe, LATAM, Pacific Asia, USCA"
+order_city,categorical,Destination city of the order
+order_country,categorical,Destination country of the order
+order_customer_id,numerical,Customer order code
+order_date,datetime,Date on which the order is made
+order_id,numerical,Order code
+order_item_cardprod_id,numerical,Product code generated through the RFID reader
+order_item_discount,numerical,Order item discount value
+order_item_discount_rate,numerical,Order item discount percentage
+order_item_id,numerical,Order item code
+order_item_product_price,numerical,Price of products without discount
+order_item_profit_ratio,numerical,Order Item Profit Ratio
+order_item_quantity,numerical,Number of products per order
+sales,numerical,Value in sales
+order_item_total_amount,numerical,Total amount per order
+order_profit_per_order,numerical,Order Profit Per Order
+order_region,categorical,"Region of the world where the order is delivered Southeast Asia, South Asia,Oceania, Eastern Asia, West Asia, West of USA, US Center, West Africa, Central Africa ,North Africa, Western Europe ,Northern, Caribbean, South America, East Africa, Southern Europe, East of USA, Canada, Southern Africa, Central Asia,  Europe, Central America, Eastern Europe, South of USA"
+order_state,categorical,State of the region where the order is delivered
+order_status,categorical,"Order Status: COMPLETE, PENDING, CLOSED, PENDING_PAYMENT, CANCELED, PROCESSING, SUSPECTED_FRAUD, ON_HOLD, PAYMENT_REVIEW"
+product_card_id,numerical,Product code
+product_category_id,numerical,Product category code
+product_name,text,Product name
+product_price,numerical,Product price
+shipping_date,datetime,Exact date and time of shipment
+shipping_mode,categorical,"The following shipping modes are presented: Standard Class, First Class, Second Class, Same Day"
+label,categorical,"delivery outcomes: -1 early arrival, 0 on time, 1 delayed"
+
+
+
+🛒 Customer & Product Details
+Variable Name	Explanation (Layman Terms)
+customer_id	A unique number given to each customer. Like a customer ID.
+customer_city	The city where the customer placed the order.
+customer_state	The state in which the customer lives.
+customer_country	The country where the customer is from.
+customer_zipcode	The postal/ZIP code of the customer.
+customer_segment	Type of customer: whether they are a regular person (Consumer), a business (Corporate), or someone working from home (Home Office).
+
+🏬 Store & Department Info
+Variable Name	Explanation
+department_id	A number representing a store's department (e.g., electronics, clothing).
+department_name	The name of that department (e.g., "Furniture", "Technology").
+latitude	Latitude coordinate of the store location (for mapping).
+longitude	Longitude coordinate of the store location.
+
+📦 Order & Product Info
+Variable Name	Explanation
+order_id	Unique ID for each order (like an invoice number).
+order_date	The date the order was placed.
+order_customer_id	Customer ID tied to that specific order.
+order_item_id	ID for each item within an order (each order can have multiple items).
+order_item_cardprod_id	Unique code for the product (RFID-like code).
+order_item_quantity	Number of units of that product in the order.
+product_card_id	Another code used for product tracking.
+product_category_id	Code representing the type of product (e.g., books, clothes).
+product_name	The name of the product.
+category_id	Another ID to group products by category.
+category_name	Name of the product category (e.g., "Electronics").
+
+💵 Financial Information
+Variable Name	Explanation
+product_price	The price of a single product without any discount.
+order_item_product_price	Same as above – price of each product without discount.
+order_item_discount	How much money was discounted from the price.
+order_item_discount_rate	What percentage of the price was discounted.
+order_item_total_amount	Total price for the quantity of products ordered (after discounts).
+order_item_profit_ratio	Percentage of profit made on the item.
+profit_per_order	Total profit earned for each order.
+sales_per_customer	How much money each customer has spent in total.
+sales	The actual amount of money received for the order.
+order_profit_per_order	Profit made for the entire order.
+
+🌍 Delivery & Shipping Info
+Variable Name	Explanation
+order_city	The city where the order is being delivered.
+order_state	The state where the order is going.
+order_country	The country where the order is going.
+order_region	Broad geographical area (e.g., West Africa, South Asia).
+market	Business region/market like Africa, Europe, Pacific Asia, etc.
+shipping_date	When the product was actually shipped (date & time).
+shipping_mode	How fast or by what method the product was shipped (e.g., Same Day, First Class).
+
+📦 Order Status & Type
+Variable Name	Explanation
+order_status	Current status of the order (e.g., Complete, Canceled, Fraud Suspected).
+payment_type	How the customer paid (e.g., Credit Card, Wallet, etc.).
+
+📊 Target Label
+Variable Name	Explanation
+label	The delivery result: -1 means early, 0 means on-time, 1 means delayed. This is what you're likely trying to predict in your ML model.

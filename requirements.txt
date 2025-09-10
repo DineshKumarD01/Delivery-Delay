@@ -1,7 +1,77 @@
+pandas
+numpy 
+matplotlib 
+seaborn 
+plotly 
+scipy 
+tqdm 
+openpyxl 
+ydata-profiling
+scikit-learn
+geopy
+shap
+xgboost
+lightgbm
+imbalanced-learn
+optuna
+skl2onnx
+onnx
+onnxruntime
 torch 
 transformers 
 accelerate 
 datasets 
 peft 
 bitsandbytes
-huggingface_hub
+streamlit 
+requests
+fastapi
+uvicorn
+
+# here modify the code as I mentioning below
+
+# our input from frontend like below as json
+
+# input_data = {
+#     "profit_per_order": profit_per_order,
+#     "order_item_discount": order_item_discount,
+#     "order_item_product_price": order_item_product_price,
+#     "order_item_profit_ratio": order_item_profit_ratio,
+#     "order_item_quantity": order_item_quantity,
+#     "sales": sales,
+#     "order_profit_per_order": order_profit_per_order,
+#     "customer": {
+#         "country": customer_country,
+#         "state": customer_state,
+#         "city": customer_city,
+#     },
+#     "order": {
+#         "region": order_region,
+#         "country": order_country,
+#         "state": order_state,
+#         "city": order_city,
+#     },
+#     "payment_type": payment_type,
+#     "shipping_mode": shipping_mode,
+#     "order_datetime": str(order_datetime),
+#     "ship_datetime": str(ship_datetime),
+# }
+
+# final columns I need to send to rf model to predict
+
+# Index(['profit_per_order', 'order_item_discount', 'order_item_product_price',
+#        'order_item_profit_ratio', 'order_item_quantity', 'sales',
+#        'order_profit_per_order', 'shipping_mode', 'distance_normalized',
+#        'order_to_shipment_days', 'order_shipping_time',
+#        'order_to_shipment_planned_days', 'shipment_delay_days',
+#        'performance_score_order_full_location',
+#        'performance_score_customer_full_location',
+#        'performance_score_order_dayofweek',
+#        'performance_score_shipping_dayofweek', 'performance_score_order_hour',
+#        'performance_score_shipping_hour', 'performance_score_order_daynight',
+#        'performance_score_ship_daynight', 'payment_type_CASH',
+#        'payment_type_DEBIT', 'payment_type_PAYMENT', 'payment_type_TRANSFER',
+#        'target'],
+#       dtype='object')
+
+# for distance_normalised: 

@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+joblib
+shap
+numpy
+pandas
+openpyxl   # because you load Excel with pandas
+llama-cpp-python
+requests

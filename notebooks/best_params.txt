@@ -1,0 +1,17 @@
+{'n_estimators': 690, 'max_depth': 27, 'min_samples_split': 2, 'min_samples_leaf': 1, 'max_features': 'log2', 'bootstrap': True} - rf
+
+{'n_estimators': 859,
+ 'max_depth': 14,
+ 'learning_rate': 0.017578265956285696,
+ 'subsample': 0.7445205736294263,
+ 'colsample_bytree': 0.9985457633151822,
+ 'gamma': 0.03961247433820425,
+ 'reg_alpha': 0.04745791469362093,
+ 'reg_lambda': 1.7290794318081057,
+ 'random_state': 42,
+ 'n_jobs': -1,
+ 'use_label_encoder': False,
+ 'eval_metric': 'mlogloss'} - xg boost
+
+light gbm
+ {'n_estimators': 991, 'max_depth': 15, 'learning_rate': 0.11493042829241355, 'num_leaves': 218, 'subsample': 0.571672074678408, 'colsample_bytree': 0.6282051583603918, 'min_child_samples': 6, 'reg_alpha': 0.0020533664937874008, 'reg_lambda': 4.850360590699926}

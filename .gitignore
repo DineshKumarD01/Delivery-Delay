@@ -208,3 +208,23 @@ __marimo__/
 
 results/
 
+# Ignore all pickle/model files everywhere
+*.pkl
+*.joblib
+*.sav
+*.h5
+*.hdf5
+*.ckpt
+*.pt
+*.pth
+*.onnx
+*.gguf
+*.bin
+*.safetensors
+
+# Optional: ignore model folders if you keep them separate
+/models/
+/checkpoints/
+/artifacts/
+
+
