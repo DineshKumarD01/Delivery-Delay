@@ -2,6 +2,7 @@ import streamlit as st
 import json
 import datetime
 import requests
+import os
 
 # --------------------------
 # Page Config
@@ -33,12 +34,15 @@ st.markdown("Fill in the details below to predict delivery delays.")
 # --------------------------
 # Load Hierarchy JSON Files
 # --------------------------
-with open("customer_hierarchy.json", "r", encoding="utf-8") as f:
+# Get the folder where this script is located
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# Load JSON files relative to this folder
+with open(os.path.join(BASE_DIR, "customer_hierarchy.json"), "r", encoding="utf-8") as f:
     customer_hierarchy = json.load(f)
 
-with open("order_hierarchy.json", "r", encoding="utf-8") as f:
+with open(os.path.join(BASE_DIR, "order_hierarchy.json"), "r", encoding="utf-8") as f:
     order_hierarchy = json.load(f)
-
 # --------------------------
 # Dropdown choices
 # --------------------------
@@ -171,7 +175,7 @@ st.json(input_data)
 # --------------------------
 # Send to Backend API
 # --------------------------
-backend_url = "http://127.0.0.1:8000/predict"  # Replace with your API endpoint
+backend_url = "http://65.1.95.224:8000/predict"
 
 if st.button("Predict Delivery Delay"):
     try:
@@ -180,10 +184,10 @@ if st.button("Predict Delivery Delay"):
 
         if response.status_code == 200:
             st.success("✅ Successfully sent to API")
-            st.json(response.json())
+            # st.json(response.json())
             st.subheader("Prediction Result")
             st.write(f"**Delay Status:** {result['prediction']}")
-            st.write(f"**Explanation:** {result['explanation']}")
+            st.write(f"**Explanation:** {result['llm_explanation']}")
 
         else:
             st.error(f"❌ API Error: {response.status_code}")
