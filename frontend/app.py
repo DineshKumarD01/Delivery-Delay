@@ -34,14 +34,11 @@ st.markdown("Fill in the details below to predict delivery delays.")
 # --------------------------
 # Load Hierarchy JSON Files
 # --------------------------
-# Get the folder where this script is located
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# Load JSON files relative to this folder
-with open(os.path.join(BASE_DIR, "customer_hierarchy.json"), "r", encoding="utf-8") as f:
+with open("customer_hierarchy.json", "r", encoding="utf-8") as f:
     customer_hierarchy = json.load(f)
 
-with open(os.path.join(BASE_DIR, "order_hierarchy.json"), "r", encoding="utf-8") as f:
+with open("order_hierarchy.json", "r", encoding="utf-8") as f:
     order_hierarchy = json.load(f)
 # --------------------------
 # Dropdown choices
